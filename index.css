@@ -227,30 +227,6 @@ body::-webkit-scrollbar-track {
 	transition: 0.8s ease;
 }
 
-@media only screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 2) {
-	.form {
-		margin:auto;
-	}
-	.form{
-		height:24px;
-		width: 100%;
-	}
-	.tasks {
-		width:80vw;
-	}
-	.input {
-		width: 80vw;
-		margin: 0 auto;
-	}
-	.form input {
-		margin-right:-1px
-	}
-	.form .createTask {
-		height:30px;
-		margin-top:2px;
-	}
-
-}
 
 @media only screen and (max-width: 800px) {
 	.tasks {
