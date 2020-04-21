@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="./images/logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>To-do</title>
+</head>
+
+<body>
+  <div class="form">
+    <div class="input">
+      <input type="text" class="inputTask">
+      <button type="button" class="createTask">
+        <span class="material-icons">
+          add
+        </span>
+      </button>
+    </div>
+    <select onchange="option(this)" id="taskState">
+      <option value="all">All</option>
+      <option value="task">Completed</option>
+      <option value="completed">Uncompleted</option>
+    </select>
+  </div>
+  <div class="tasks"></div>
+  <script src="index.js"></script>
+</body>
+
+</html>

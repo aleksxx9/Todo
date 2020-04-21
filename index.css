@@ -1,0 +1,266 @@
+body {
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
+	background-color: rgba(48, 10, 154, 0.5);
+	background: repeating-linear-gradient(120deg, rgba(48, 10, 154, 0.5), rgba(23, 115, 204, 0.5)) no-repeat fixed;
+}
+.form {
+	min-height: 30vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.form span {
+	user-select: none;
+	color: rgba(48, 10, 154, 0.5);
+}
+.form button:focus,
+.edit:focus,
+.delete:focus,
+.complete:focus {
+	outline: none;
+}
+.input {
+	display: inline-grid;
+	grid-template-columns: auto 34px;
+	height: 34px;
+	width: 50vw;
+}
+.form input {
+	-moz-appearance: none;
+	appearance:none;
+	-webkit-appearance: none;
+	border-radius: 0;
+	padding: 5px;
+	background-color: white;
+	border: none;
+}
+.form span {
+	border-radius: 0;
+	background-color: white;
+	border: none;
+}
+.task,
+.completed {
+	display: inline-grid;
+	grid-template-columns: auto 27px 27px;
+	padding: 0;
+	height: auto;
+}
+.text {
+	min-height: 16px;
+	user-select: none;
+	pointer-events: none;
+	margin: auto auto;
+	padding: 2px 2px 0 0;
+	text-align: center;
+	height: auto;
+	float: left;
+	word-break: break-all;
+}
+.span {
+	word-break: break-all;
+	height: 100%;
+}
+.edit span,
+.delete span,
+.complete span {
+	user-select: none;
+	pointer-events: none;
+	font-size: 15px;
+	height: 10px;
+}
+.delete {
+	color: red;
+}
+#taskState {
+	-moz-appearance:none;
+	-webkit-appearance: none;
+	appearance:none;
+	background:white;
+	border-radius:0;
+	margin: 1rem 0 0 0;
+	outline: none;
+	border: none;
+	padding: 0 2rem 0 1em;
+	background-image: linear-gradient(-65deg, white 50%, transparent 50%),
+	linear-gradient(-115deg, transparent 50%, white 50%),
+	linear-gradient(to right, black, black);
+	background-repeat: no-repeat;
+	background-size: 10px 13px;
+	background-position: 97.5% 5px;
+}
+.complete {
+	color: green;
+}
+.edit {
+	color: rgba(5, 5, 133, 0.612);
+}
+.edit,
+.delete,
+.complete {
+	float: right;
+	background: white;
+	border: none;
+	cursor: pointer;
+}
+.form button {
+	float: right;
+	background-color: white;
+	position: relative;
+	cursor: pointer;
+	height: 34px;
+	width: 34px;
+	overflow: hidden;
+	border: none;
+	margin: 0;
+	padding: 0;
+	transition-duration: 0.4s;
+}
+
+.form button:hover {
+	background: white;
+	color: black;
+}
+.form button:after {
+	content: '';
+	background: #1a5dbc74;
+	display: block;
+	position: absolute;
+	border-radius: 50%;
+	margin-left: -8px;
+	margin-top: -38px;
+	padding: 24px;
+	transform: scale(0);
+	opacity: 0;
+	transition: all 0.8s;
+}
+.form button:active:after {
+	padding: 0;
+	margin: 0;
+	transform: scale(5);
+	margin-left: 17px;
+	margin-top: -17px;
+	opacity: 1;
+	transition: 0s;
+}
+.form input:focus {
+	outline: none;
+}
+.tasks {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto;
+	width: 50vw;
+}
+.completed {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 0.25em 0.5em;
+	font-size: small;
+	margin: 0.5em 0;
+}
+.completed button {
+	background: rgba(255, 255, 255, 0);
+}
+.completed .delete {
+	display: none;
+}
+.completed .text {
+	text-decoration: line-through;
+}
+.completed span,
+.completed .text {
+	opacity: 0.5;
+}
+.task {
+	background: white;
+	padding: 0.25em 0.5em;
+	font-size: small;
+	margin: 0.5em 0;
+}
+.editInput {
+	overflow: hidden;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	word-break: break-all;
+	height: auto;
+	outline: none;
+	width: 100%;
+	resize: none;
+	border: none;
+}
+.editInput:focus {
+	overflow: hidden;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	word-break: break-all;
+	height: auto;
+	outline: none;
+	width: 100%;
+	resize: none;
+	border: none;
+}
+body::-webkit-scrollbar {
+	width: 0.25em;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: white;
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+		0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+	border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+		0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+	background: #d6d5d5;
+}
+
+.deleteAnimation {
+	opacity: 0;
+	transition: 0.8s ease;
+}
+
+@media only screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 2) {
+	.form {
+		margin:auto;
+	}
+	.form{
+		height:24px;
+		width: 100%;
+	}
+	.tasks {
+		width:80vw;
+	}
+	.input {
+		width: 80vw;
+		margin: 0 auto;
+	}
+	.form input {
+		margin-right:-1px
+	}
+	.form .createTask {
+		height:30px;
+		margin-top:2px;
+	}
+
+}
+
+@media only screen and (max-width: 800px) {
+	.tasks {
+		width:80vw;
+	}
+	.createTask{
+		height:36px;
+	}
+	.input {
+		width: 80vw;
+		margin: 0 auto;
+	}
+}
