@@ -12,7 +12,29 @@ document.addEventListener('DOMContentLoaded', () => {
       addTask(task.text, task.state);
     }
   }
+  if (!localStorage.getItem('firstTime')) {
+    modal = document.getElementById('modal');
+    cross = document.getElementsByClassName('close')[0];
+    modal.style.display = "flex";
+    cross.onclick = function () {
+      display();
+      // modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        display();
+        // modal.style.display = "none";
+      }
+    }
+  }
 })
+
+function display() {
+  modal.style.display = "none";
+  if(document.getElementById('dontShow').checked){
+    localStorage.setItem('firstTime', "dont Show");
+  }
+}
 
 createTask.addEventListener('click', () => {
   addStorage();
@@ -67,7 +89,7 @@ taskBoard.addEventListener('dblclick', e => {
 taskBoard.addEventListener('click', e => {
   if (e.target.textContent === 'delete') {
     const elem = e.target.parentNode;
-    if (elem.className === 'task') {
+    if (elem.className === 'task' || elem.className === "completed") {
       elem.classList.add('deleteAnimation');
       elem.addEventListener('transitionend', () => {
         const element = elem.parentNode.childNodes;
